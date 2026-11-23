@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy · Roopha Rajagopal</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#fff,#141518);--ink:light-dark(#1d1f23,#ecedef);--soft:light-dark(#5b6068,#a3a8b0);--line:light-dark(#e6e7ea,#2a2c31)}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.7 "Inter",system-ui,sans-serif}
+main{max-width:680px;margin:0 auto;padding:56px 20px 80px}
+h1{font:500 44px/1.1 "Newsreader",Georgia,serif;margin:0 0 24px}
+h2{font:500 24px/1.2 "Newsreader",Georgia,serif;margin:36px 0 8px}
+p,li{color:var(--soft)}
+a{color:var(--ink)}
+button{font:500 16px "Inter",sans-serif;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer;margin-top:8px}
+.back{display:inline-block;margin-bottom:32px;color:var(--soft)}
+</style>
+</head>
+<body>
+<main>
+<a class="back" href="index.html">← Back to Roopha Rajagopal</a>
+<h1>Privacy</h1>
+<p>This is a personal website. I don't sell anything and I don't collect your name or email.</p>
+<h2>Google Analytics</h2>
+<p>If you say yes when asked, I use Google Analytics to understand how many people visit and which projects they open. It uses cookies and tells me things like:</p>
+<ul><li>how many people visited, and roughly from which country</li><li>which pages and project links were clicked</li><li>which site sent you here, like LinkedIn</li><li>whether you're on a phone or a computer</li></ul>
+<p>Your IP address is anonymised. If you say no, Google Analytics never loads.</p>
+<h2>Changing your mind</h2>
+<p>You can reset your choice at any time, and you'll be asked again on the home page.</p>
+<button type="button" id="reset">Reset my choice</button>
+<p id="done" hidden>Done. You'll be asked again next time.</p>
+<h2>Questions</h2>
+<p>Email me at rroopha2026@outlook.com.</p>
+</main>
+<script>
+document.getElementById('reset').addEventListener('click',()=>{try{localStorage.removeItem('ga-consent')}catch(e){}document.getElementById('done').hidden=false});
+</script>
+</body>
+</html>
