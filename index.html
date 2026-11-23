@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Roopha Rajagopal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,15 +87,18 @@ section.band{border-top:1px solid var(--line);padding:clamp(48px,7vw,88px) 0}
 .contact h2{font-size:clamp(36px,5vw,56px);font-style:italic}
 .contact p{color:var(--soft);font-size:20px;margin:14px 0 0}
 .contact .btns{justify-content:center}
-footer{border-top:1px solid var(--line);padding:28px 0;color:var(--soft);font-size:15px}
+footer{border-top:1px solid var(--line);padding:32px 0 calc(56px + env(safe-area-inset-bottom,0px));color:var(--soft);font-size:15px}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 footer nav{display:flex;gap:18px;flex-wrap:wrap}
 @media(max-width:800px){
 body{font-size:17px}
 .hero{grid-template-columns:minmax(0,1fr);gap:28px}
-.photo{order:-1;max-width:220px}
+.photo{order:-1;width:200px;max-width:100%}
 .photo img{aspect-ratio:1;border-radius:50%}
-.photo figcaption{text-align:left}
+.photo figcaption{text-align:center;font-size:16px;line-height:1.35;margin-top:10px;width:240px;margin-left:-20px;text-wrap:balance}
+header .wrap{min-height:0;padding-top:14px;padding-bottom:6px;gap:2px 16px}
+header b{font-size:22px;line-height:1.25;width:100%}
+header nav a{padding:8px 0}
 .intro,.two{grid-template-columns:minmax(0,1fr)}
 .qa{grid-template-columns:minmax(0,1fr);padding:28px 0 40px 40px;gap:20px}
 .qa::before{left:4px;top:38px}
