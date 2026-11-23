@@ -14,7 +14,7 @@ A list of project names doesn't explain any of that, so I wanted a home for my w
 
 I also wanted it to feel welcoming to anyone who lands here, whether that's a recruiter, a fellow builder, a teenager or my grandparents. So it had to be:
 
-- **Calm.** White space, one soft yellow highlight, nothing flashing or busy.
+- **Calm.** White space, one thin yellow underline, nothing flashing or busy.
 - **Easy to read.** Large type, high contrast, and big buttons that are easy to tap.
 - **Familiar.** It scrolls like any page. There's nothing to figure out, and everything is visible right away.
 - **Still mine.** One quiet idea runs through it: a thread of questions.
@@ -29,7 +29,7 @@ Who I am in one line, a photo, and two clear choices: see my projects or read my
 ### 2. The question thread
 The heart of the site. Each project opens with the question that started it, written large, followed by what I built, why it matters, and two buttons: try it, or see how it's made.
 
-A thin line runs down the left side and fills in as you read. As you reach each question, its dot fills in and a yellow highlighter sweeps underneath it, like someone marking the line that matters.
+Each project gets a screen of its own. A thin line runs down the left side and fills in as you read. As you reach each question, its dot fills in and a thin yellow underline draws itself beneath it, like someone marking the line that matters.
 
 ![Each project begins with its question, joined by a thread that fills as you scroll](screenshots/question-thread.jpg)
 
