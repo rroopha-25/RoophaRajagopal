@@ -49,7 +49,7 @@ Every project also has its own short story. Tap the question or **Read the story
 Smaller things sit just below: Golu Nights, the SizeKey app (coming soon) and Create a Bill, my very first program.
 
 ### 3. A little about me
-A short, human introduction and a little ID card: my photo, what I studied, my certifications and what I do off the clock. Turn the card over to see the five places I've worked, with a link to my full resume.
+A short, human introduction and a little ID card: my photo, what I studied, my certifications, what I do off the clock and what I'm building now. Turn the card over to see the five places I've worked, with a link to my full resume.
 
 ### 4. Letters
 My three newest letters on Medium, to the people I love and to the girl I used to be. New posts appear here on their own.
