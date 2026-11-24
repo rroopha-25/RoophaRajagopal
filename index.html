@@ -121,10 +121,88 @@ header nav a{font-size:15px}
 .consent button{font:500 16px "Inter",sans-serif;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer}
 .consent button.yes{background:var(--ink);color:var(--bg)}
 .consent button:hover,.consent button:focus-visible{background:var(--hi);border-color:var(--hi);color:#1d1f23;outline:none}
+
+/* project stories */
+.story-wrap{position:fixed;inset:0;z-index:60;display:none;background:color-mix(in srgb,var(--ink) 35%,transparent);overflow-y:auto;overscroll-behavior:contain}
+.story-wrap.on{display:block}
+.story{position:relative;max-width:760px;margin:clamp(12px,5vh,56px) auto;background:var(--bg);border-radius:24px;padding:clamp(24px,5vw,56px);box-shadow:0 30px 80px rgba(0,0,0,.25);animation:rise .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+.story .x{position:sticky;top:12px;float:right;margin:-8px -8px 0 0;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:24px;cursor:pointer;z-index:2}
+.story .x:focus-visible{outline:3px solid var(--hi)}
+.story .ask{font:400 clamp(28px,4vw,40px)/1.18 "Fraunces",Georgia,serif;letter-spacing:-.02em;color:var(--ink);margin:0 56px 14px 0}
+.story .ask span{background:linear-gradient(var(--hi),var(--hi)) no-repeat 0 100%/100% 3px;padding-bottom:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.story h2{font:600 22px "Inter",sans-serif;letter-spacing:-.01em;margin:0 0 14px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;padding:0;list-style:none}
+.meta li{font-size:14px;color:var(--soft);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.story img.cover{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;border-radius:14px;border:1px solid var(--line);margin:0 0 28px}
+.story h3{font:400 24px "Fraunces",Georgia,serif;letter-spacing:-.01em;margin:30px 0 10px}
+.story p,.story li{color:var(--soft)}
+.story p{margin:0 0 12px}
+.story ul.pts{margin:0 0 8px;padding-left:22px}
+.story ul.pts li{margin:0 0 8px}
+.story ul.pts b{color:var(--ink);font-weight:600}
+.story .links{margin-top:30px}
+.story .nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:36px;padding-top:20px}
+.story .nav button{font:500 16px "Inter",sans-serif;min-height:46px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.story .nav button:hover,.story .nav button:focus-visible{border-color:var(--ink);outline:none}
+.links button.read{font:500 16px "Inter",sans-serif;display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.links button.read:hover,.links button.read:focus-visible{background:var(--hi);border-color:var(--hi);color:#1d1f23;outline:none}
+.qa .ask{cursor:pointer}
+body.lock{overflow:hidden}
+/* ID card */
+.idc{perspective:1400px;max-width:440px;width:100%}
+.idc .in{position:relative;display:grid;transition:transform .8s cubic-bezier(.3,.7,.2,1);transform-style:preserve-3d}
+.idc.flip .in{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:26px 26px 22px;box-shadow:0 14px 40px rgba(0,0,0,.08);display:flex;flex-direction:column}
+.face.back{transform:rotateY(180deg)}
+.face .strip{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--soft);border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:18px}
+.face .strip i{font-style:normal;width:34px;height:22px;border-radius:5px;background:linear-gradient(135deg,var(--hi),color-mix(in srgb,var(--hi) 55%,#fff))}
+.who{display:flex;gap:18px;align-items:center;margin-bottom:18px}
+.who img{width:92px;height:92px;border-radius:16px;object-fit:cover;flex:none}
+.who b{display:block;font:400 26px/1.1 "Fraunces",Georgia,serif;letter-spacing:-.01em}
+.who span{color:var(--soft);font-size:15px}
+.rows{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 16px;font-size:15px}
+.rows dt{color:var(--soft)}
+.rows dd{margin:0}
+.face .flipb{margin-top:auto;padding-top:18px}
+.face .flipb button{font:500 15px "Inter",sans-serif;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer}
+.face .flipb button:hover,.face .flipb button:focus-visible{background:var(--hi);border-color:var(--hi);color:#1d1f23;outline:none}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:7.2em minmax(0,1fr);gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:15px}
+.tl li:first-child{border-top:0}
+.tl em{font-style:normal;color:var(--soft)}
+.tl b{font-weight:600}
+.tl span{display:block;color:var(--soft)}
+.face.back .flipb{display:flex;gap:8px;flex-wrap:wrap}
+.face.back .flipb a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:500;font-size:15px}
+/* opening note */
+.intro-note{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:var(--bg);transition:opacity .6s ease .1s}
+.intro-note.gone{opacity:0;pointer-events:none}
+.env{position:relative;width:min(320px,76vw);aspect-ratio:3/2}
+.env svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.env .base{z-index:1}
+.env .flap{z-index:3;transition:z-index 0s .45s}
+.env .flapg{transform-box:view-box;transform-origin:50% 1%;transition:transform .5s ease}
+.env .letter{transition:transform .75s cubic-bezier(.3,.8,.2,1) .5s}
+.env .seal{transition:opacity .2s}
+.intro-note.open .env .flap{z-index:0}
+.intro-note.open .env .flapg{transform:rotateX(180deg)}
+.intro-note.open .env .seal{opacity:0}
+.intro-note.open .env .letter{transform:translateY(-62px)}
+.intro-note p{position:absolute;bottom:max(6vh,24px);left:0;right:0;text-align:center;margin:0;color:var(--soft);font-size:15px}
+.intro-note button{font:inherit;background:none;border:0;color:inherit;text-decoration:underline;cursor:pointer;padding:10px}
+@media(max-width:800px){.idc{max-width:none}.who img{width:76px;height:76px}.tl li{grid-template-columns:minmax(0,1fr);gap:0}.story{border-radius:20px;margin:8px}.story .x{margin:-4px -4px 0 0}}
+@media(prefers-reduced-motion:reduce){.idc .in,.env .flapg,.env .letter{transition:none}.story{animation:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.qa .ask span{transition:none}.thread .fill{transition:none}}
 </style>
 </head>
 <body>
+<div class="intro-note" id="introNote" hidden aria-hidden="true"><div class="env"><svg class="base" viewBox="0 0 300 200" aria-hidden="true">
+<rect x="2" y="2" width="296" height="196" rx="10" fill="var(--tint)" stroke="var(--ink)" stroke-width="1.5"/>
+<g class="letter"><rect x="26" y="18" width="248" height="150" rx="6" fill="var(--bg)" stroke="var(--line)"/><text x="150" y="58" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="24" fill="var(--ink)">Hi, come in.</text><line x1="96" y1="76" x2="204" y2="76" stroke="var(--hi)" stroke-width="3"/></g>
+<path d="M2 74 L150 142 L298 74 V188 a10 10 0 0 1 -10 10 H12 a10 10 0 0 1 -10 -10 Z" fill="var(--tint)" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/>
+</svg><svg class="flap" viewBox="0 0 300 200" aria-hidden="true"><g class="flapg"><path d="M2 12 a10 10 0 0 1 10 -10 H288 a10 10 0 0 1 10 10 L150 122 Z" fill="var(--tint)" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/><g class="seal"><circle cx="150" cy="118" r="20" fill="var(--hi)"/><text x="150" y="126" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="22" fill="#1d1f23">R</text></g></g></svg></div><p><button type="button" id="skipIntro">Skip</button></p></div>
+<div class="story-wrap" id="storyWrap" role="dialog" aria-modal="true" aria-labelledby="storyTitle"><article class="story" id="story"></article></div>
 <header><div class="wrap"><b>Roopha Rajagopal</b><nav aria-label="Main"><a href="#work">Projects</a><a href="#about">About</a><a href="#letters">Letters</a><a href="#contact">Contact</a></nav></div></header>
 
 <main class="wrap">
@@ -159,12 +237,38 @@ header nav a{font-size:15px}
 </main>
 
 <section class="band" id="about"><div class="wrap two">
-  <h2>A little about me</h2>
   <div>
-    <p>I moved across the world on my own, learned how to start over, and found that courage grows the more you use it. I try to make everything simple enough for a child and meaningful enough for their grandparents.</p>
+    <h2>A little about me</h2>
+    <p style="margin-top:16px">I moved across the world on my own, learned how to start over, and found that courage grows the more you use it. I try to make everything simple enough for a child and meaningful enough for their grandparents.</p>
     <p>For more than five years I've worked in product, finding out why people get stuck and then helping build the fix.</p>
-    <ul class="places" aria-label="Places I've worked"><li>Uber</li><li>Arizona State University</li><li>Deloitte</li><li>Oracle</li><li>AMBC</li></ul>
-    <div class="btns" style="margin-top:0"><a class="btn" href="Roopha_Rajagopal_Resume_2026.pdf">Read my resume</a><a class="btn" href="https://www.linkedin.com/in/rroopharajagopal">LinkedIn</a></div>
+    <div class="btns" style="margin-top:8px"><a class="btn" href="Roopha_Rajagopal_Resume_2026.pdf">Read my resume</a><a class="btn" href="https://www.linkedin.com/in/rroopharajagopal">LinkedIn</a></div>
+  </div>
+  <div class="idc" id="idc">
+    <div class="in">
+      <div class="face front" aria-hidden="false">
+        <div class="strip"><span>Curious person card</span><i aria-hidden="true"></i></div>
+        <div class="who"><img src="img/me.webp" alt="Photo of Roopha Rajagopal" width="92" height="92"><div><b>Roopha Rajagopal</b><span>Product manager and maker</span></div></div>
+        <dl class="rows">
+          <dt>Always asking</dt><dd>Why?</dd>
+          <dt>Experience</dt><dd>5+ years in product</dd>
+          <dt>Studied</dt><dd>MS, Industrial Management, Arizona State University</dd>
+          <dt>Certified</dt><dd>CSPO · CSM · SAFe Agilist · AIPMM</dd>
+          <dt>Off the clock</dt><dd>Writing letters, drawing, crochet</dd>
+        </dl>
+        <div class="flipb"><button type="button" id="flipTo">Turn over for my experience →</button></div>
+      </div>
+      <div class="face back" aria-hidden="true">
+        <div class="strip"><span>Where I've practised asking why</span><i aria-hidden="true"></i></div>
+        <ul class="tl">
+          <li><em>2026 – now</em><div><b>Uber</b><span>Product Manager, AI policy</span></div></li>
+          <li><em>2024 – 2025</em><div><b>Arizona State University</b><span>Product and Solutions Specialist</span></div></li>
+          <li><em>2022 – 2023</em><div><b>Deloitte</b><span>Product Operations Specialist</span></div></li>
+          <li><em>2021 – 2022</em><div><b>Oracle</b><span>Product Analyst</span></div></li>
+          <li><em>2019 – 2021</em><div><b>AMBC</b><span>Business Solution Specialist</span></div></li>
+        </ul>
+        <div class="flipb"><button type="button" id="flipBack">← Turn back</button><a href="Roopha_Rajagopal_Resume_2026.pdf">Full resume</a></div>
+      </div>
+    </div>
   </div>
 </div></section>
 
@@ -216,7 +320,7 @@ const P=[
  {q:'Why can\'t a grocery app shop for your doctor\'s advice?',kind:'Design case study',name:'Health-Aware Grocery',img:'grocery',text:'A concept for people managing their health: carry your goals, lab results and allergies into the grocery apps you already use.',code:'https://github.com/rroopha-25/Health-Aware-Grocery-Delivery---UX-Case-Study',codeL:'Read the case study'}
 ];
 const qs=document.getElementById('qs');
-qs.innerHTML=P.map(p=>`<article class="qa"><div><p class="ask"><span>${p.q}</span></p><h3>${p.kind}</h3><p class="name">${p.name}</p><p>${p.text}</p><div class="links">${p.live?`<a class="go" href="${p.live[0]}">${p.live[1]}</a>`:''}<a href="${p.code}">${p.codeL||'See the code'}</a></div></div><div class="shot"><img src="img/${p.img}.webp" alt="Screenshot of ${p.name}" width="360" height="270" loading="lazy"></div></article>`).join('');
+qs.innerHTML=P.map(p=>`<article class="qa" id="p-${p.img}" data-id="${p.img}"><div><p class="ask"><span>${p.q}</span></p><h3>${p.kind}</h3><p class="name">${p.name}</p><p>${p.text}</p><div class="links">${p.live?`<a class="go" href="${p.live[0]}">${p.live[1]}</a>`:''}<button type="button" class="read" data-story="${p.img}">Read the story</button><a href="${p.code}">${p.codeL||'See the code'}</a></div></div><div class="shot"><img src="img/${p.img}.webp" alt="Screenshot of ${p.name}" width="360" height="270" loading="lazy"></div></article>`).join('');
 const items=[...qs.querySelectorAll('.qa')];
 const dots=()=>items.forEach(it=>{const a=it.querySelector('.ask');it.style.setProperty('--dot',(a.offsetTop+14)+'px')});dots();addEventListener('resize',dots);document.fonts&&document.fonts.ready.then(dots);
 const seen=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){e.target.classList.add('seen');seen.unobserve(e.target)}},{rootMargin:'0px 0px -35% 0px'});
@@ -228,6 +332,71 @@ addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(upd)},{passive:
 addEventListener('resize',upd);upd();
 }
 
+
+/* project stories */
+{
+const S={
+ sizekey:{type:'Website',status:'Live',for:'Families who shop online',
+  problem:['<b>Every brand sizes differently.</b> A Medium at one brand is a Large at another.','<b>Every country sizes differently.</b> Indian, US, UK and EU charts use different numbers for the same body.','<b>It isn\'t just clothes.</b> Bras, briefs, shoes, kids\' clothes and diapers each have their own system.','<b>Families shop for many bodies,</b> including a baby who changes size every few months.','<b>Wrong sizes cost time and money,</b> and fit is the main reason people send clothes back.'],
+  made:'You enter your measurements once and see your size everywhere, for everyone in the family. It covers women, men, kids, toddlers and babies; clothing, innerwear, footwear and diapers; Indian, US, UK and EU charts; and 140+ brands, including everyday labels the big size tools ignore.',
+  choices:['<b>No sign-up, no server, no tracking.</b> Measurements never leave your phone.','<b>Honest about edges.</b> A note appears when you\'re right between two sizes.','<b>Plain guidance</b> on how to measure, for every single field.'],
+  now:'Live on the web. An iPhone and Android app is in progress, with family profiles, re-measure reminders for growing kids and a shareable size card.'},
+ tinykeys:{type:'Game for ages 1 to 3',status:'Live',for:'Parents who work from home, and their toddlers',
+  problem:['You\'re on a call, and your toddler wants to "work" too.','Hand them a spare laptop and within seconds they\'ve closed tabs, opened settings or typed into something important.'],
+  made:'A safe keyboard playground. Every key shows a big picture, says something out loud and plays a note. Letters lead to words and real animal sounds, numbers count real things dropping onto the screen, and the space bar brings animals.',
+  choices:['<b>Nothing breaks.</b> The screen locks and captures shortcut keys, so mashing can\'t close anything.','<b>Every press is rewarded,</b> so kids learn that what they do makes something happen.','<b>Calm and honest.</b> No ads, no sign-up, no data, and a bedtime mode and play timer to wind down.','<b>It always sounds musical,</b> because every note is tuned to a pentatonic scale, Raga Mohanam.'],
+  now:'Free to play in Chrome or Edge, and it works offline after the first visit.'},
+ pathfinder:{type:'Chrome extension',status:'Beta',for:'International students job hunting on OPT',
+  problem:['<b>Applying to jobs that can\'t sponsor them.</b> Postings are vague or silent, so hours go into jobs that were never possible.','<b>Sending the same resume everywhere,</b> when applicant tracking systems filter by the keywords each job needs.','<b>Messaging strangers on LinkedIn</b> with no way to tell who is active, hiring or local.'],
+  made:'One side panel, on the job page you\'re already looking at. It gives a sponsorship verdict (likely yes, ask first, or skip) using the posting and the company\'s real H-1B filings, a resume match score with the keywords you\'re missing, and the people most likely to reply, with a message that sounds like you.',
+  choices:['<b>Finds the hidden yes:</b> a posting that says "no sponsorship" from a company that files hundreds of visas a year, with the exact question to ask.','<b>Never invents experience.</b> Resume edits only reword what\'s already there.','<b>Never sends anything for you.</b> You read, edit and send every message yourself.','<b>Your data stays with you.</b> No account and no tracking.'],
+  now:'In beta on the Chrome Web Store, free. Built by an international student, for international students.'},
+ lettertide:{type:'Website',status:'Live',for:'Kids, and the grown-ups they love',
+  problem:['Finding an old note you wrote years ago is one of life\'s small magic moments.','Sites that send letters to your future self exist, but they\'re built for adults: a text box, a date and an email years later. Children want to write letters too.'],
+  made:'A bright, friendly mailbox for three kinds of letters: to future you, to someone you love, and to Santa, who writes back on Christmas morning. Future letters come back with a time capsule shown "then and now".',
+  choices:['<b>Made for small hands.</b> One question per screen, big buttons and idea starters for when a child gets stuck.','<b>Talk instead of typing,</b> and a "Read it to me" button for kids who can\'t read yet.','<b>Santa is safe.</b> He never promises presents, never asks for an address, and gently points a worried child to a trusted grown-up.','<b>Feels like a real letter,</b> with airmail stripes, stamps and a bottle floating out to sea.'],
+  now:'Live on the web. Letters are saved on your device for now, and email delivery switches on once the backend is connected.'},
+ story:{type:'Website',status:'Live',for:'Anyone curious about Diwali, anywhere in the world',
+  problem:['Every autumn, more than a billion people light a lamp for Diwali.','Many, especially outside India, have never heard the whole story of why.'],
+  made:'One simple scroll in three parts. Twelve chapters of the Ramayana, each beside a hand-painted Pattachitra scene; a map of seven real places in India and Sri Lanka where the story lives today; and a Happy Diwali wish you can personalise and share.',
+  choices:['<b>Told through Odisha Pattachitra,</b> a traditional painting style, so the art carries the story.','<b>A Listen button</b> on every chapter, for anyone who\'d rather hear it.','<b>No accounts, no cookies, no tracking.</b>'],
+  now:'Live on the web, and made for phones.'},
+ grocery:{type:'Design case study',status:'Concept',for:'People managing prediabetes, high cholesterol or food allergies',
+  problem:['Doctors tell people to change how they eat, but grocery apps give them no way to shop for it.','Search can\'t filter by added sugar, saturated fat or sodium, and every label hides behind a tap.','Out-of-stock substitutions and auto-reorders ignore health goals and allergies.','One household cart often has to serve different needs.'],
+  made:'One workflow that could work in every grocery app: set your goals once (or import lab results), shop with simple fit labels, get a cart check with healthier and cheaper swaps, and make sure shoppers and subscriptions follow the same rules.',
+  choices:['<b>Lab results become shopping limits,</b> which you can edit, and the raw numbers are deleted after.','<b>Protects the substitution,</b> the moment where trust breaks most often today.','<b>Healthy within budget,</b> showing cheaper options that still fit.'],
+  now:'A concept, with the full problem, workflow and app-by-app screens in the case study.'}
+};
+const P2=[...document.querySelectorAll('.qa')].map(a=>a.dataset.id);
+const wrap=document.getElementById('storyWrap'),box=document.getElementById('story');
+let last=null;
+const html=id=>{const s=S[id],card=document.getElementById('p-'+id),q=card.querySelector('.ask span').textContent,name=card.querySelector('.name').textContent,links=card.querySelector('.links').cloneNode(true);links.querySelector('.read')?.remove();const i=P2.indexOf(id),prev=P2[(i-1+P2.length)%P2.length],next=P2[(i+1)%P2.length];
+ return `<button class="x" id="sx" aria-label="Close">×</button><p class="ask"><span>${q}</span></p><h2 id="storyTitle">${name}</h2><ul class="meta"><li>${s.type}</li><li>${s.status}</li><li>2026</li><li>Idea, design and build</li></ul><img class="cover" src="${card.querySelector('.shot img').getAttribute('src')}" alt="Screenshot of ${name}"><h3>The problem</h3><ul class="pts">${s.problem.map(x=>`<li>${x}</li>`).join('')}</ul><h3>Who it's for</h3><p>${s.for}.</p><h3>What I made</h3><p>${s.made}</p><h3>The choices that mattered</h3><ul class="pts">${s.choices.map(x=>`<li>${x}</li>`).join('')}</ul><h3>Where it is now</h3><p>${s.now}</p>${links.outerHTML}<div class="nav"><button type="button" data-story="${prev}">← ${document.getElementById('p-'+prev).querySelector('.name').textContent}</button><button type="button" data-story="${next}">${document.getElementById('p-'+next).querySelector('.name').textContent} →</button></div>`};
+const open=(id,push=true)=>{if(!S[id])return;if(!wrap.classList.contains('on'))last=document.activeElement;box.innerHTML=html(id);wrap.classList.add('on');wrap.scrollTop=0;document.body.classList.add('lock');document.getElementById('sx').focus();if(push){try{history.replaceState(null,'','#story-'+id)}catch(e){}}if(window.__ga)gtag('event','story_open',{project:id})};
+const close=()=>{wrap.classList.remove('on');document.body.classList.remove('lock');try{history.replaceState(null,'',location.pathname)}catch(e){}if(last&&last.focus)last.focus({preventScroll:true})};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-story]');if(b){e.preventDefault();open(b.dataset.story);return}const q=e.target.closest('.qa .ask');if(q){open(q.closest('.qa').dataset.id)}});
+wrap.addEventListener('click',e=>{if(e.target===wrap||e.target.id==='sx')close()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&wrap.classList.contains('on'))close()});
+const fromHash=()=>{const m=location.hash.match(/^#story-(\w+)/);if(m)open(m[1],false)};fromHash();addEventListener('hashchange',fromHash);
+}
+/* ID card flip */
+{
+const c=document.getElementById('idc'),f=c.querySelector('.front'),b=c.querySelector('.back');
+const set=on=>{c.classList.toggle('flip',on);f.setAttribute('aria-hidden',on);b.setAttribute('aria-hidden',!on);f.inert=on;b.inert=!on;(on?document.getElementById('flipBack'):document.getElementById('flipTo')).focus({preventScroll:true})};
+b.inert=true;
+document.getElementById('flipTo').addEventListener('click',()=>set(true));
+document.getElementById('flipBack').addEventListener('click',()=>set(false));
+}
+/* opening note: first visit only */
+{
+const n=document.getElementById('introNote');let seen=false;try{seen=localStorage.getItem('intro-seen')==='1'}catch(e){}
+const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!seen&&!still&&!location.hash){n.hidden=false;document.body.classList.add('lock');
+ const done=()=>{n.classList.add('gone');document.body.classList.remove('lock');try{localStorage.setItem('intro-seen','1')}catch(e){}setTimeout(()=>n.remove(),800)};
+ setTimeout(()=>n.classList.add('open'),350);const t=setTimeout(done,2300);
+ n.addEventListener('click',()=>{clearTimeout(t);done()});
+}else n.remove();
+}
 /* Letters: show the newest Medium posts automatically; the hand-written list above stays if Medium can't be reached */
 {
 const list=document.getElementById('letters-list');

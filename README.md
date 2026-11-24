@@ -23,6 +23,8 @@ I also wanted it to feel welcoming to anyone who lands here, whether that's a re
 
 The page is one journey from top to bottom, with five stops.
 
+The very first time someone visits, a small envelope sealed with an "R" opens and a note slides out: *Hi, come in.* It takes two seconds, happens only once, and can be skipped with a tap.
+
 ### 1. Hello
 Who I am in one line, a photo, and two clear choices: see my projects or read my resume.
 
@@ -42,10 +44,12 @@ Each project gets a screen of its own. A thin line runs down the left side and f
 | How do you tell a billion people why they light a lamp? | **The Story of Light**: Diwali told in Pattachitra paintings |
 | Why can't a grocery app shop for your doctor's advice? | **Health-Aware Grocery**: a design case study |
 
+Every project also has its own short story. Tap the question or **Read the story** to open it: the problem, who it's for, what I made, the choices that mattered, and where it is now. You can move from one story to the next without going back.
+
 Smaller things sit just below: Golu Nights, the SizeKey app (coming soon) and Create a Bill, my very first program.
 
 ### 3. A little about me
-A short, human introduction, the places I've worked, and my resume. It's not the whole resume, only enough to know me.
+A short, human introduction and a little ID card: my photo, what I studied, my certifications and what I do off the clock. Turn the card over to see the five places I've worked, with a link to my full resume.
 
 ### 4. Letters
 My three newest letters on Medium, to the people I love and to the girl I used to be. New posts appear here on their own.
