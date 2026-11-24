@@ -171,7 +171,7 @@ header nav a{font-size:15px}
 <section class="band" id="letters"><div class="wrap two">
   <div><h2>I also write letters</h2><p style="margin-top:14px">To the people I love, and to the girl I used to be.</p></div>
   <div>
-    <ul class="letters">
+    <ul class="letters" id="letters-list">
       <li><a href="https://medium.com/@rroopha2026/to-the-little-girl-who-always-believed-in-magic-cdfb150fdd34"><b>To the Little Girl Who Always Believed in Magic</b><span>Oct 2026</span></a></li>
       <li><a href="https://medium.com/@rroopha2026/what-if-life-is-taking-me-somewhere-better-than-i-imagined-6f0734f50808"><b>What If Life Is Taking Me Somewhere Better Than I Imagined?</b><span>Nov 2026</span></a></li>
       <li><a href="https://medium.com/@rroopha2026/awareness-the-art-of-understanding-before-acting-bf63464a3cdd"><b>Awareness: The Art of Understanding Before Acting</b><span>Nov 2026</span></a></li>
@@ -226,6 +226,19 @@ let raf=0;
 const upd=()=>{raf=0;const r=th.getBoundingClientRect(),vh=innerHeight;const f=Math.max(0,Math.min(1,(vh*.6-r.top)/r.height));fill.style.setProperty('--f',f.toFixed(3))};
 addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(upd)},{passive:true});
 addEventListener('resize',upd);upd();
+}
+
+/* Letters: show the newest Medium posts automatically; the hand-written list above stays if Medium can't be reached */
+{
+const list=document.getElementById('letters-list');
+const feed='https://medium.com/feed/@rroopha2026';
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=d=>{const t=new Date(String(d).replace(' ','T'));return isNaN(t)?'':t.toLocaleDateString('en-US',{month:'short',year:'numeric'})};
+fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(feed)).then(r=>r.ok?r.json():null).then(d=>{
+ if(!d||d.status!=='ok'||!Array.isArray(d.items)||!d.items.length)return;
+ const items=d.items.slice(0,3);
+ list.innerHTML=items.map(it=>`<li><a href="${esc(String(it.link).split('?')[0])}"><b>${esc(it.title)}</b><span>${fmt(it.pubDate)}</span></a></li>`).join('');
+}).catch(()=>{});
 }
 /* gentle settle: when scrolling stops, glide the nearest section so it sits fully on screen */
 {

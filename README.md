@@ -48,7 +48,7 @@ Smaller things sit just below: Golu Nights, the SizeKey app (coming soon) and Cr
 A short, human introduction, the places I've worked, and my resume. It's not the whole resume, only enough to know me.
 
 ### 4. Letters
-Three of the letters I write on Medium, to the people I love and to the girl I used to be.
+My three newest letters on Medium, to the people I love and to the girl I used to be. New posts appear here on their own.
 
 ### 5. Say hi
 It ends the way it began, with a question: *Have a question for me?*
