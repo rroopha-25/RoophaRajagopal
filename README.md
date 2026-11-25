@@ -55,7 +55,7 @@ A short, human introduction and a little ID card: my photo, what I studied, my c
 My three newest letters on Medium, to the people I love and to the girl I used to be. New posts appear here on their own.
 
 ### 5. Say hi
-It ends the way it began, with a question: *Have a question for me?*
+It ends the way it began, with a question: *Have a question for me?* Visitors can type one straight into a little box, which opens their email app addressed to me. The box suggests questions while it waits.
 
 ![About me and my letters](screenshots/about-and-letters.jpg)
 

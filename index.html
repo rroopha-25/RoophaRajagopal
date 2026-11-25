@@ -48,17 +48,19 @@ header nav a:hover,header nav a:focus-visible{color:var(--ink);text-decoration:u
 .thread{position:relative;padding:40px 0 20px}
 .thread::before{content:"";position:absolute;left:11px;top:0;bottom:0;width:2px;background:var(--line)}
 .thread .fill{position:absolute;left:11px;top:0;width:2px;height:calc(var(--f,0) * 100%);background:var(--ink);transition:height .15s linear}
-.qa{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:28px 56px;align-items:center;align-content:center;padding:32px 0 32px 56px;min-height:calc(100vh - 68px);min-height:calc(100svh - 68px);scroll-snap-align:start;scroll-margin-top:68px}
+.qa{position:relative;display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:28px 64px;align-items:center;align-content:center;padding:32px 0 32px 56px;min-height:calc(100vh - 68px);min-height:calc(100svh - 68px);scroll-snap-align:start;scroll-margin-top:68px}
 .qa::before{content:"";position:absolute;left:4px;top:var(--dot,50%);width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--ink);transition:background .3s}
 .qa.seen::before{background:var(--ink)}
-.qa .ask{font:400 clamp(26px,3vw,36px)/1.22 "Fraunces",Georgia,serif;letter-spacing:-.02em;font-variation-settings:"SOFT" 50;color:var(--ink);margin:0 0 20px;text-wrap:balance}
+.qa .ask{font:400 clamp(28px,3.2vw,42px)/1.18 "Fraunces",Georgia,serif;letter-spacing:-.02em;font-variation-settings:"SOFT" 50;color:var(--ink);margin:0 0 20px;text-wrap:balance}
 .qa .ask span{background:linear-gradient(var(--hi),var(--hi)) no-repeat 0 100%/0% 3px;padding-bottom:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size 1.1s cubic-bezier(.3,.7,.2,1)}
 .qa.seen .ask span{background-size:100% 3px}
 .qa h3{display:inline-block;font:500 13px "Inter",sans-serif;letter-spacing:0;color:var(--soft);border:1px solid var(--line);border-radius:999px;padding:3px 12px;margin:0 0 10px}
 .qa p.name{font:600 20px "Inter",sans-serif;letter-spacing:-.01em;margin:0 0 6px;color:var(--ink)}
 .qa p{margin:0;color:var(--soft);max-width:32em}
-.qa .shot{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--tint)}
-.qa .shot img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top}
+.qa .shot{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--tint);padding-top:30px}
+.qa .shot::before{content:"";position:absolute;left:14px;top:11px;width:8px;height:8px;border-radius:50%;background:var(--line);box-shadow:14px 0 0 var(--line),28px 0 0 var(--line)}
+.qa .shot img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:left top;border-top:1px solid var(--line)}
+.qa.seen .shot{box-shadow:0 26px 60px -28px color-mix(in srgb,var(--hi) 75%,transparent)}
 .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 .links a,.links span{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px;border:1.5px solid var(--line);text-decoration:none;font-weight:500;font-size:16px}
 .links a.go{border-color:var(--ink);background:var(--ink);color:var(--bg)}
@@ -101,8 +103,8 @@ header b{font-size:22px;line-height:1.25;width:100%}
 header nav a{padding:8px 0}
 .intro,.two{grid-template-columns:minmax(0,1fr)}
 .qa{grid-template-columns:minmax(0,1fr);padding:20px 0 24px 40px;gap:16px;min-height:calc(100svh - 96px);scroll-margin-top:96px}
-.qa .shot img{aspect-ratio:16/9}
-.qa .ask{font-size:25px;margin-bottom:14px}
+.qa .shot img{aspect-ratio:16/10}
+.qa .ask{font-size:27px;margin-bottom:14px}
 .links{margin-top:14px}
 .hero{min-height:0;scroll-margin-top:96px}
 .intro,section.band{scroll-margin-top:96px}
@@ -210,6 +212,17 @@ body.lock{overflow:hidden}
 @keyframes draw{to{stroke-dashoffset:0}}
 .qa .shot{transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));will-change:transform}
 .qa .shot.tilt{box-shadow:0 18px 40px rgba(0,0,0,.12)}
+.askme{display:flex;gap:10px;max-width:620px;margin:28px auto 0;padding:8px;border:1.5px solid var(--line);border-radius:999px;background:var(--bg);transition:border-color .2s,box-shadow .2s}
+.askme:focus-within{border-color:var(--ink);box-shadow:0 0 0 6px color-mix(in srgb,var(--hi) 35%,transparent)}
+.askme input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:17px "Inter",sans-serif;padding:0 16px;outline:none}
+.askme input::placeholder{color:var(--soft);transition:opacity .3s}
+.askme .btn{min-height:48px;margin:0}
+.askme.shake{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.contact .asknote{font-size:15px;margin-top:12px}
+.contact .btns{margin-top:22px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(max-width:560px){.askme{flex-direction:column;border-radius:20px}.askme input{min-height:48px}.askme .btn{justify-content:center}}
 @media(prefers-reduced-motion:reduce){.thread .star svg,.qa.seen::before{animation:none}.photo .ring rect{animation:none;stroke-dashoffset:0}.qa .shot{transform:none!important}.spark{display:none}}
 @media(prefers-reduced-motion:reduce){.idc .in,.env .flapg,.env .letter{transition:none}.story{animation:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.qa .ask span{transition:none}.thread .fill{transition:none}}
@@ -307,8 +320,14 @@ body.lock{overflow:hidden}
 
 <section class="band contact" id="contact"><div class="wrap">
   <h2>Have a question for me?</h2>
-  <p>I'd love to hear it. rroopha2026@outlook.com</p>
-  <div class="btns"><a class="btn solid" href="https://www.linkedin.com/in/rroopharajagopal">Say hi on LinkedIn</a><a class="btn" href="https://github.com/rroopha-25">GitHub</a><a class="btn" href="https://medium.com/@rroopha2026">Medium</a></div>
+  <p>I collect them. Ask me anything, big or small.</p>
+  <form class="askme" id="askme" novalidate>
+    <label for="askq" class="sr">Your question</label>
+    <input id="askq" name="q" type="text" maxlength="300" autocomplete="off" placeholder="What are you building next?">
+    <button type="submit" class="btn solid">Send it</button>
+  </form>
+  <p class="asknote" id="asknote" aria-live="polite">It opens your email app, addressed to rroopha2026@outlook.com.</p>
+  <div class="btns"><a class="btn" href="https://www.linkedin.com/in/rroopharajagopal">Say hi on LinkedIn</a><a class="btn" href="https://github.com/rroopha-25">GitHub</a><a class="btn" href="https://medium.com/@rroopha2026">Medium</a></div>
 </div></section>
 
 <footer><div class="wrap"><span>© 2026 Roopha Rajagopal</span><nav><a href="privacy.html">Privacy</a><a href="Roopha_Rajagopal_Resume_2026.pdf">Resume</a><a href="https://www.linkedin.com/in/rroopharajagopal">LinkedIn</a><a href="https://github.com/rroopha-25">GitHub</a></nav></div></footer>
@@ -337,11 +356,11 @@ const P=[
  {q:'What if a toddler could bang on a laptop and nothing broke?',kind:'Game for ages 1 to 3',name:'Tiny Keys',img:'tinykeys',text:'Every key shows a big picture, says a word out loud and plays a note. The screen stays locked, so little hands can\'t close anything.',live:['https://rroopha-25.github.io/Tiny-keys/','Play Tiny Keys'],code:'https://github.com/rroopha-25/Tiny-keys'},
  {q:'Why apply to jobs that could never sponsor you?',kind:'Chrome extension',name:'Pathfinder',img:'pathfinder',text:'For international job seekers. On any job post it shows whether the company can sponsor you, how your resume fits, and who to message.',live:['https://chromewebstore.google.com/detail/abmjmkgdmifpioikgdlegdkgklohbfoh','Add to Chrome'],code:'https://github.com/rroopha-25/pathfinder'},
  {q:'What if a letter could wait years for the right moment?',kind:'Website',name:'Lettertide',img:'lettertide',text:'Write a letter to future you, to someone you love, or to Santa, who writes back. Simple enough for a child to finish alone.',live:['https://rroopha-25.github.io/Lettertide/','Write a letter'],code:'https://github.com/rroopha-25/Lettertide'},
- {q:'How do you tell a billion people why they light a lamp?',kind:'Website',name:'The Story of Light',img:'story',text:'The story of Diwali told in Odisha Pattachitra paintings, with a Listen button on every chapter and a map of the real places.',live:['https://rroopha-25.github.io/story-of-light/','Read the story'],code:'https://github.com/rroopha-25/Story-of-Light'},
+ {q:'How do you tell a billion people why they light a lamp?',kind:'Website',name:'The Story of Light',img:'story',text:'The story of Diwali told in Odisha Pattachitra paintings, with a Listen button on every chapter and a map of the real places.',live:['https://rroopha-25.github.io/story-of-light/','Visit the website'],code:'https://github.com/rroopha-25/Story-of-Light'},
  {q:'Why can\'t a grocery app shop for your doctor\'s advice?',kind:'Design case study',name:'Health-Aware Grocery',img:'grocery',text:'A concept for people managing their health: carry your goals, lab results and allergies into the grocery apps you already use.',code:'https://github.com/rroopha-25/Health-Aware-Grocery-Delivery---UX-Case-Study',codeL:'Read the case study'}
 ];
 const qs=document.getElementById('qs');
-qs.innerHTML=P.map(p=>`<article class="qa" id="p-${p.img}" data-id="${p.img}"><div><p class="ask"><span>${p.q}</span></p><h3>${p.kind}</h3><p class="name">${p.name}</p><p>${p.text}</p><div class="links">${p.live?`<a class="go" href="${p.live[0]}">${p.live[1]}</a>`:''}<button type="button" class="read" data-story="${p.img}">Read the story</button><a href="${p.code}">${p.codeL||'See the code'}</a></div></div><div class="shot"><img src="img/${p.img}.webp" alt="Screenshot of ${p.name}" width="360" height="270" loading="lazy"></div></article>`).join('');
+qs.innerHTML=P.map(p=>`<article class="qa" id="p-${p.img}" data-id="${p.img}"><div><p class="ask"><span>${p.q}</span></p><h3>${p.kind}</h3><p class="name">${p.name}</p><p>${p.text}</p><div class="links">${p.live?`<a class="go" href="${p.live[0]}">${p.live[1]}</a>`:''}<button type="button" class="read" data-story="${p.img}">Read the story</button><a href="${p.code}">${p.codeL||'See the code'}</a></div></div><div class="shot"><img src="img/${p.img}.webp" alt="Screenshot of ${p.name}" width="960" height="600" loading="lazy"></div></article>`).join('');
 const items=[...qs.querySelectorAll('.qa')];
 const dots=()=>items.forEach(it=>{const a=it.querySelector('.ask');it.style.setProperty('--dot',(a.offsetTop+14)+'px')});dots();addEventListener('resize',dots);document.fonts&&document.fonts.ready.then(dots);
 const seen=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){e.target.classList.add('seen');seen.unobserve(e.target)}},{rootMargin:'0px 0px -35% 0px'});
@@ -376,6 +395,20 @@ if(!still&&matchMedia('(hover:hover) and (pointer:fine)').matches){
 }
 }
 
+
+/* ask me a question */
+{
+const f=document.getElementById('askme'),q=document.getElementById('askq'),note=document.getElementById('asknote');
+const ideas=['What are you building next?','Why did you build SizeKey?','What made you start writing letters?','How do you pick which question to chase?','What\'s your favourite thing to cook?'];
+let k=0;if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{if(document.activeElement!==q&&!q.value){k=(k+1)%ideas.length;q.placeholder=ideas[k]}},3200);
+f.addEventListener('submit',e=>{e.preventDefault();const v=q.value.trim();
+ if(!v){note.textContent='Type a question first, then press Send it.';f.classList.remove('shake');void f.offsetWidth;f.classList.add('shake');q.focus();return}
+ location.href='mailto:rroopha2026@outlook.com?subject='+encodeURIComponent('A question for you')+'&body='+encodeURIComponent(v+'\n\n(Sent from your website)');
+ note.textContent='Thank you! Your email app should open now. If it doesn\'t, write to rroopha2026@outlook.com.';
+ if(window.__ga)gtag('event','question_sent');
+});
+q.addEventListener('input',()=>{note.textContent='It opens your email app, addressed to rroopha2026@outlook.com.'});
+}
 /* project stories */
 {
 const S={
